@@ -20,7 +20,7 @@ df = df.sort_index()
 
 df = df.dropna()
 # %%
-df.to_csv(processed_data_path)
+df.to_csv(processed_data_path, index=True)  
 
 print(f"✅ Cleaned data saved to: {processed_data_path}")
 print(df.head())

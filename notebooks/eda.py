@@ -9,7 +9,7 @@ import os
 basedir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 processed_dir = os.path.join(basedir, 'data', 'processed')
 processed_data_path = os.path.join(processed_dir, 'AAPL_cleaned.csv')
-df = pd.read_csv(processed_data_path)
+df = pd.read_csv(processed_data_path, index_col='Date', parse_dates=True)
 
 
 # %% Closing price
