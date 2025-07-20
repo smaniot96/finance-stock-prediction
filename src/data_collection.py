@@ -13,15 +13,16 @@ end_date = '2024-12-31'
 # Construct full path to data/raw inside project root
 raw_data_dir = os.path.join(basedir, 'data', 'raw')
 os.makedirs(raw_data_dir, exist_ok=True)
-
+ticker_obj = yf.Ticker(ticker)
 print(f"Downloading {ticker} data...")
-data = yf.download(ticker, start=start_date, end=end_date)
-if isinstance(data.columns, pd.MultiIndex):
-    data.columns = data.columns.get_level_values(0)
+data = ticker_obj.history(start=start_date, end=end_date, auto_adjust=False)
 print(data.columns)  
+
 
 # %%
 
 csv_path = os.path.join(raw_data_dir, f"{ticker}.csv")
 data.to_csv(csv_path)
 print(f"Saved {ticker} data to {csv_path} ({len(data)} rows)")
+
+# %%
