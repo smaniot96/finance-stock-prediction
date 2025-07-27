@@ -48,7 +48,6 @@ for horizon in horizons:
     new_predictors += [ratio_column, trend_column]
 df.dropna(inplace=True)
 # %% 
-predictors = ['Close', 'Open', 'High', 'Low', 'Volume']
 model = RandomForestClassifier(n_estimators=200, min_samples_split=50, random_state=42)
 # %%
 predictions = backtest(df, model, new_predictors)
