@@ -7,7 +7,7 @@ import pandas as pd
 basedir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 
 ticker = 'AAPL'
-start_date = '2015-01-01'
+start_date = '1990-01-01'
 end_date = '2024-12-31'
 
 # Construct full path to data/raw inside project root

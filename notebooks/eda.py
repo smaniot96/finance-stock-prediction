@@ -65,11 +65,16 @@ corr_matrix = df[price_cols].corr()
 cov_matrix = df[price_cols].cov()
 
 print("Correlation matrix:\n", corr_matrix)
-print("\nCovariance matrix:\n", cov_matrix)
-
 plt.figure(figsize=(8,6))
 sns.heatmap(corr_matrix, annot=True, cmap='coolwarm')
 plt.title('Correlation Matrix of Price Features')
 plt.show()
 
-# %%
+print("\nCovariance matrix:\n", cov_matrix)
+plt.figure(figsize=(8,6))
+sns.heatmap(cov_matrix, annot=True, cmap='coolwarm')
+plt.title('Correlation Matrix of Price Features')
+plt.show()
+
+
+# %% 
